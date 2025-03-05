@@ -18,6 +18,10 @@ export default async function handleRequest(
   context,
 ) {
   const {nonce, header, NonceProvider} = createContentSecurityPolicy({
+    connectSrc: [
+      'https://f3b7-188-213-202-89.ngrok-free.app:*',
+      'https://better-llama-gentle.ngrok-free.app:*',
+    ],
     shop: {
       checkoutDomain: context.env.PUBLIC_CHECKOUT_DOMAIN,
       storeDomain: context.env.PUBLIC_STORE_DOMAIN,
