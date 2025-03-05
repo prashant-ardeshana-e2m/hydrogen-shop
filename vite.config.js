@@ -22,6 +22,15 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  server: {
+    host: true,
+    port: 3000,
+    allowedHosts: [
+      'caed-188-213-202-80.ngrok-free.app', // First ngrok URL
+      'better-llama-gentle.ngrok-free.app', // Second ngrok URL
+      'localhost', // Allow local development
+    ],
+  },
   build: {
     // Allow a strict Content-Security-Policy
     // withtout inlining assets as base64:
